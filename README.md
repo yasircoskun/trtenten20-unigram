@@ -10,9 +10,12 @@ Bu repoda paylaşılan betikler tam otomatik olarak çalıştırılmaya uygun de
 
 Bu betikleri aynı kaynaktan veri kazımak isteyen başkalarına fikir vermesi amacıyla paylaşıyorum.
 
-Günlerce interneti taradıktan sonra daha fazla kaynağa aşağıdaki bağlantıdan ulaştım:
+Günlerce interneti taradıktan sonra daha fazla kaynağa aşağıdaki bağlantılardan ulaştım:
 
 - https://www.denizyuret.com/2006/11/turkish-resources.html
+- https://wortschatz.uni-leipzig.de/en/download/Turkish
+- https://tulap.cmpe.boun.edu.tr/home
+- https://turkishnlp.github.io/list/
 
 Ben algoritmamı bu adresten temin ettiğim bir veri ile çalıştırmaya devam ediyorum. Bununla beraber benim çalışmam için sözlükte bir kelimenin varlığı ve yokluğu doğrudan başarıya etki ediyor. Bu nedenle sözlüğün zaman içerisinde güncellenebilmesi için bir derlem yönetim arayüzü entegre etmeyi hedefliyorum.
 
