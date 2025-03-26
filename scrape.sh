@@ -29,6 +29,14 @@ while true; do
         -H 'Sec-Fetch-Site: same-origin' \
         -H 'TE: trailers')
 
+    # JSON'dan Items array'ini al
+    ITEMS=$(echo $RESPONSE | jq -r '.Items')
+
+    # Eğer Items array'i boş ise döngüyü bitir
+    if [ "$ITEMS" = "[]" ]; then
+        break
+    fi
+
     # JSON'dan son elemanı al
     LAST_ITEM=$(echo $RESPONSE | jq -r '.Items[-1]')
 
@@ -40,6 +48,12 @@ while true; do
         break
     fi
 
+    
+    if [[  "$MAX_FREQ" -eq "$NEXT_MAX_FREQ"  ]]; then
+        echo "$MAX_FREQ değeri ile scrape-letter-enumeration.sh betiğini çalıştırarak devam et!" 
+        exit;
+    fi
+
     # MAX_FREQ'i güncelle
     MAX_FREQ=$NEXT_MAX_FREQ
 
@@ -49,8 +63,5 @@ while true; do
     # Bir sonraki sorguya hazırlan
     sleep 1 # API'ye yük bindirmek için bekleyebilirsiniz
 done
-
-# Tekrarlayan satırları sil
-awk '!seen[$0]++' $OUTPUT_FILE > temp_file && mv temp_file $OUTPUT_FILE
 
 echo "Scraping tamamlandı. Kelime frekansları $OUTPUT_FILE dosyasına kaydedildi."
